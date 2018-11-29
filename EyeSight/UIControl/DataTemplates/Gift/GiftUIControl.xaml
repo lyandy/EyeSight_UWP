@@ -1,0 +1,24 @@
+﻿<MyControl:UIControlBase
+    xmlns:MyControl="using:EyeSight.Base"
+    x:Class="EyeSight.UIControl.DataTemplates.GiftUIControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.UIControl.DataTemplates.Gift"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Extensions="using:EyeSight.Extension.DependencyObjectEx"
+    xmlns:bam="using:Brain.Animate"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="grid" DataContextChanged="grid_DataContextChanged" Opacity="0" Background="{ThemeResource SystemControlHighlightListAccentMediumBrush}">
+        <Grid Background="{Binding Path=BgColor}">
+            <StackPanel x:Name="spApp" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0">
+                <Image x:Name="imgApp" Stretch="UniformToFill" Source="{Binding Path=AppImage}"  Opacity="0"/>
+                <TextBlock x:Name="tbAppName" Text="{Binding Path=AppName}" Foreground="{Binding Path=AppNameForground}" FontSize="15" HorizontalAlignment="Center" Margin="0,5,0,0" Opacity="0"/>
+            </StackPanel>
+            <bam:AnimatingTextBlock x:Name="tbBam" HorizontalAlignment="Center" Foreground="{Binding Path=AppNameForground}"  VerticalAlignment="Center" FontFamily="Microsoft YaHei" Interval="0.1" FontSize="15" CharacterSpacing="100" Opacity="1"/>
+        </Grid>
+    </Grid>
+</MyControl:UIControlBase>

@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="EyeSight.View.Daily.DailyPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Daily"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:myppf="using:EyeSight.UIControl.UserControls.SemanticZoomMediaPlayerUICtrl"
+    xmlns:UIFlipViewControl="using:EyeSight.UIControl.UserControls.SemanticZoomFlipViewUICtrl"
+    xmlns:UIGridControl="using:EyeSight.UIControl.UserControls.SemanticZoomGridUICtrl"
+    xmlns:UIPullToRefreshContorl="using:EyeSight.UIControl.UserControls.PullToRefreshUICtrl"
+    xmlns:LocalCmdEx="using:EyeSight.Extension.CommandEx"
+    xmlns:Selector="using:EyeSight.Selector"
+    NavigationCacheMode="Required"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid x:Name="AnimationGrid">
+            <SemanticZoom x:Name="szPhone">
+                <SemanticZoom.ZoomedInView>
+                    <UIPullToRefreshContorl:PullToRefreshScrollViewer x:Name="szListView" RefreshCommand="{Binding ExeCommandDailyVM.ListViewRefreshCommand, Source={StaticResource Locator}}" LocalCmdEx:ListViewCommandEx.LoadMoreCommand="{Binding ExeCommandDailyVM.ListViewLoadMoreCommand, Source={StaticResource Locator}}" ItemsSource="{Binding Path=DailyCollection}" SelectionMode="None" ItemContainerStyle="{StaticResource PhoneListViewItemStyle}" RequestedTheme="Light">
+                        <ListView.ItemTemplateSelector>
+                            <Selector:DailyPhoneListViewDataTemplateSelector DailyMobileDataTemplate="{StaticResource DailyMobileDataTemplate}" DailyMobileTodayDataTemplate="{StaticResource DailyMobileTodayDataTemplate}"/>
+                        </ListView.ItemTemplateSelector>
+                    </UIPullToRefreshContorl:PullToRefreshScrollViewer>
+                </SemanticZoom.ZoomedInView>
+                <SemanticZoom.ZoomedOutView>
+                    <UIGridControl:SemanticZoomGrid>
+                        <SemanticZoom x:Name="szPC" IsZoomedInViewActive="True" Margin="0,0,0,0">
+                            <SemanticZoom.ZoomedInView>
+                                <UIFlipViewControl:SemanticZoomFlipView x:Name="szPCDailyFlipView" Background="White" ItemsSource="{Binding Path=DailyFlipViewCollection}" ItemTemplate="{StaticResource DailyCommonDataTemplate}" SelectedItem="{Binding BaseVM.curModelPropertyBase,Mode=TwoWay, Source={StaticResource Locator}}"/>
+                            </SemanticZoom.ZoomedInView>
+                            <SemanticZoom.ZoomedOutView>
+                                <myppf:SematicZoomMediaPlayer
+                                    PlayerStateChanged="VideoMediaPlayer_PlayerStateChanged"
+                                    Loaded="videoMediaPlayer_Loaded"
+                                              x:Name="videoMediaPlayer"
+                                              IsPlayPauseVisible="True"
+                                              IsFullScreenVisible="True" 
+                                              IsDurationVisible="True"
+                                              IsTimeElapsedVisible="True"
+                                              IsTimeRemainingVisible="False"
+                                              IsResolutionIndicatorVisible="True"
+                                              IsVolumeVisible="True"
+                                              FontSize="12"
+                                              RequestedTheme="Light"
+                                              RenderTransformOrigin="0.5, 0.5"/>
+                            </SemanticZoom.ZoomedOutView>
+                        </SemanticZoom>
+                    </UIGridControl:SemanticZoomGrid>
+                </SemanticZoom.ZoomedOutView>
+            </SemanticZoom>
+        </Grid>
+        <!--这里主要是兼容对自定义SplashScreenImage欢迎屏幕的控制。让主页面DailyPage的Progress在自己的页面上显示。同时顶部向上便宜48个像素是为了综合本页面 相对于NavingationPage顶端控制栏的48个像素，达到本页面的Progress显示位置和其他页面显示位置一致-->
+        <Grid Margin="0,-48,0,0" Visibility="{Binding Path=IsBusy, Converter={StaticResource boolToVisibilityConverter}}">
+            <ProgressRing x:Name="pro" IsActive="{Binding Path=IsBusy}" Visibility="{Binding Path=IsBusy, Converter={StaticResource boolToVisibilityConverter}}" Foreground="Red" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Page>

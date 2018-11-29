@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="EyeSight.View.Author.AuthorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Author"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:LocalCmdEx="using:EyeSight.Extension.CommandEx"
+    NavigationCacheMode="Required"
+     Background="White"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid x:Name="AnimationGrid">
+            <ListView x:Name="szListView" SelectionMode="None" ItemsSource="{Binding Path=AuthorCollection}" ItemTemplate="{StaticResource AuthorDataTemplate}" ItemContainerStyle="{StaticResource PCPastCategoryListViewItemStyle}" RequestedTheme="Light" LocalCmdEx:ListViewCommandEx.LoadMoreCommand="{Binding ExeCommandAuthorVM.ListViewLoadMoreCommand, Source={StaticResource Locator}}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal">
+                            <ItemsWrapGrid.ChildrenTransitions>
+                                <TransitionCollection/>
+                            </ItemsWrapGrid.ChildrenTransitions>
+                        </ItemsWrapGrid>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

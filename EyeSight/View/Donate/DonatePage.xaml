@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="EyeSight.View.Donate.DonatePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Donate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White" Loaded="Grid_Loaded">
+        <Grid x:Name="AnimationGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Name="borderWX" BorderBrush="{StaticResource SystemControlHighlightListAccentLowBrush}" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Height="300" Margin="0,0,20,0">
+                <Image Grid.Column="0" Source="ms-appx:///Assets/Donate/WX_Donate.jpg"/>
+            </Border>
+            <Border Name="borderAliPay" BorderBrush="{StaticResource SystemControlHighlightListAccentLowBrush}" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="300" Margin="20,0,0,0">
+                <Image  Source="ms-appx:///Assets/Donate/AliPay_Donate.jpg"  />
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

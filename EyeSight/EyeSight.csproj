@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeSight</RootNamespace>
+    <AssemblyName>EyeSight</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>EyeSight_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>981B6417A1202D469EAC596BA3B87DB31F64C114</PackageCertificateThumbprint>
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\1.jpeg" />
+    <Content Include="Assets\ayy_1.png" />
+    <Content Include="Assets\Category\About.png" />
+    <Content Include="Assets\Category\About_Phone.png" />
+    <Content Include="Assets\Category\Author.png" />
+    <Content Include="Assets\Category\Author_Phone.png" />
+    <Content Include="Assets\Category\Collection.png" />
+    <Content Include="Assets\Category\Collection_Phone.png" />
+    <Content Include="Assets\Category\Daily.png" />
+    <Content Include="Assets\Category\Daily_Phone.png" />
+    <Content Include="Assets\Category\Donate.png" />
+    <Content Include="Assets\Category\Donate_Phone.png" />
+    <Content Include="Assets\Category\Download.png" />
+    <Content Include="Assets\Category\Download_Phone.png" />
+    <Content Include="Assets\Category\Gift.png" />
+    <Content Include="Assets\Category\Gift_Phone.png" />
+    <Content Include="Assets\Category\Past.png" />
+    <Content Include="Assets\Category\Past_Phone.png" />
+    <Content Include="Assets\Category\Rank.png" />
+    <Content Include="Assets\Category\Rank_Phone.png" />
+    <Content Include="Assets\Category\Setting.png" />
+    <Content Include="Assets\Category\Setting_Phone.png" />
+    <Content Include="Assets\Donate\AliPay_Donate.JPG" />
+    <Content Include="Assets\Donate\WX_Donate.JPG" />
+    <Content Include="Assets\Favorites.png" />
+    <Content Include="Assets\GiftImages\ITHome+.png" />
+    <Content Include="Assets\Info.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Share.png" />
+    <Content Include="Assets\splash.png" />
+    <Content Include="Assets\SplashDefault\Mobile\1.jpg" />
+    <Content Include="Assets\SplashDefault\PC\2.jpg" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200 - 副本.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated - 副本.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="XMLFile1.xml" />
+    <Content Include="Assets\Font\Lobster 1.4.otf" />
+    <None Include="EyeSight_StoreKey.pfx" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ApiRoot\ApiAuthorRoot.cs" />
+    <Compile Include="Api\ApiRoot\ApiDailyRoot.cs" />
+    <Compile Include="Api\ApiRoot\ApiPastRoot.cs" />
+    <Compile Include="Api\ApiRoot\ApiRankRoot.cs" />
+    <Compile Include="Api\ApiRoot\ApiSplashScreenRoot.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Async\AsyncProperty.cs" />
+    <Compile Include="Async\EventAsync.cs" />
+    <Compile Include="Base\ClassBase.cs" />
+    <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Base\ModelPropertyBase.cs" />
+    <Compile Include="Base\UIControlBase.cs" />
+    <Compile Include="Base\ViewModelAttributeBase.cs" />
+    <Compile Include="BlankPage1.xaml.cs">
+      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonEnum.cs" />
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Config\AppEnvironment.cs" />
+    <Compile Include="Config\CacheConfig.cs" />
+    <Compile Include="Const\AppCacheNewsFileNameConst.cs" />
+    <Compile Include="Const\AppCommonConst.cs" />
+    <Compile Include="Const\AppCommonMsgConst.cs" />
+    <Compile Include="Const\AppMessengerTokenConst.cs" />
+    <Compile Include="Const\AppNetworkMessageConst.cs" />
+    <Compile Include="Converter\BoolToAppBarButtonIconConverter.cs" />
+    <Compile Include="Converter\BoolToAppBarButtonIconForDownloadConverter.cs" />
+    <Compile Include="Converter\BoolToAppBarButtonIconForFavoriteConverter.cs" />
+    <Compile Include="Converter\BoolToARGBConverter.cs" />
+    <Compile Include="Converter\BoolToBrushConverter.cs" />
+    <Compile Include="Converter\BoolToContrastBooleanConverter.cs" />
+    <Compile Include="Converter\BoolToLabelForFavoriteConverter.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\DataContextToVideoTitleConverter.cs" />
+    <Compile Include="Converter\ModelToMediaUrlConverter.cs" />
+    <Compile Include="Converter\VideoSolutionToEnabledConverter.cs" />
+    <Compile Include="Converter\VideoSolutionToLabelConverter.cs" />
+    <Compile Include="Converter\VolumeToMuteConverter.cs" />
+    <Compile Include="Encrypt\MD5Core.cs" />
+    <Compile Include="Extension\CommandEx\FlipViewCommandEx.cs" />
+    <Compile Include="Extension\CommandEx\ListViewCommandEx.cs" />
+    <Compile Include="Extension\CommandEx\PivotCommandEx.cs" />
+    <Compile Include="Extension\CommonObjectEx\CollectionEx.cs" />
+    <Compile Include="Extension\CommonObjectEx\DateTimeEx.cs" />
+    <Compile Include="Extension\CommonObjectEx\StringEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\BitmapImageEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\FrameworkElementEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\ImageEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\MessageDialogEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\ScrollViewerEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\StoryboardEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\TranslateTransformEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\VisualStateEx.cs" />
+    <Compile Include="Extension\DependencyObjectEx\WriteableBitmapEx.cs" />
+    <Compile Include="Extension\IOEx\StorageFolderEx.cs" />
+    <Compile Include="Extension\VisualTreeHelperEx.cs" />
+    <Compile Include="Helper\CommonHelper.cs" />
+    <Compile Include="Helper\CoreVisualTreeHelper.cs" />
+    <Compile Include="Helper\DatabaseHelper.cs" />
+    <Compile Include="Helper\DeviceHelper.cs" />
+    <Compile Include="Helper\DicStore.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\JsonConvertHelper.cs" />
+    <Compile Include="Helper\ParamsConvertHelper.cs" />
+    <Compile Include="Helper\RandomAnimationHelper.cs" />
+    <Compile Include="Helper\SettingsStore.cs" />
+    <Compile Include="Helper\TileHelper.cs" />
+    <Compile Include="Helper\WebDataHelper.cs" />
+    <Compile Include="Helper\WebDownFileHelper.cs" />
+    <Compile Include="Locator\ViewModelLocator.cs" />
+    <Compile Include="Model\Author\AuthorListDetailModel.cs" />
+    <Compile Include="Model\Author\AuthorListModel.cs" />
+    <Compile Include="Model\Daily\DailyRootModel.cs" />
+    <Compile Include="Model\Download\DownloadingModel.cs" />
+    <Compile Include="Model\Gift\GiftModel.cs" />
+    <Compile Include="Model\NavigationRootModel.cs" />
+    <Compile Include="Model\Past\PastCategoryDetailModel.cs" />
+    <Compile Include="Model\Past\PastCategoryModel.cs" />
+    <Compile Include="Model\PhoneSplashScreenModel.cs" />
+    <Compile Include="Model\Rank\RankModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selector\AuthorDetailListViewHeaderDataTemplateSelector.cs" />
+    <Compile Include="Selector\DailyPhoneListViewDataTemplateSelector.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="UIControl\DataTemplates\Author\AuthorDetailHeaderUIControl.xaml.cs">
+      <DependentUpon>AuthorDetailHeaderUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Author\AuthorUIControl.xaml.cs">
+      <DependentUpon>AuthorUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\CategoryUIControl.xaml.cs">
+      <DependentUpon>CategoryUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Collection\FavoriteCommonUIControl.xaml.cs">
+      <DependentUpon>FavoriteCommonUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Collection\FavoriteListUIControl.xaml.cs">
+      <DependentUpon>FavoriteListUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Daily\DailyCommonUIControl.xaml.cs">
+      <DependentUpon>DailyCommonUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Daily\DailyMobileTodayUIControl.xaml.cs">
+      <DependentUpon>DailyMobileTodayUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Daily\DailyMobileUIControl.xaml.cs">
+      <DependentUpon>DailyMobileUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Download\DownloadCommonUIControl.xaml.cs">
+      <DependentUpon>DownloadCommonUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Download\DownloadListUIControl.xaml.cs">
+      <DependentUpon>DownloadListUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Gift\GiftUIControl.xaml.cs">
+      <DependentUpon>GiftUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Past\CategoryDetailCommonUIControl.xaml.cs">
+      <DependentUpon>CategoryDetailCommonUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Past\CategoryDetailListUIControl.xaml.cs">
+      <DependentUpon>CategoryDetailListUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\Past\PastCategoryUIControl.xaml.cs">
+      <DependentUpon>PastCategoryUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\DataTemplates\VideoTagUIControl.xaml.cs">
+      <DependentUpon>VideoTagUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\AnimatedImageUICtrl\AnimatedImageUIControl.xaml.cs">
+      <DependentUpon>AnimatedImageUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\CopyUICtrl\CopyBox.cs" />
+    <Compile Include="UIControl\UserControls\CopyUICtrl\CopyUIControl.xaml.cs">
+      <DependentUpon>CopyUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\FlipAnimationImageUICtrl\FlipAnimationImageUIControl.xaml.cs">
+      <DependentUpon>FlipAnimationImageUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\LeftSliderGuestureUICtrl\LeftSliderGuestureBox.cs" />
+    <Compile Include="UIControl\UserControls\LeftSliderGuestureUICtrl\LeftSliderGuestureUIControl.xaml.cs">
+      <DependentUpon>LeftSliderGuestureUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\ProgressUICtrl\ProgressBox.cs" />
+    <Compile Include="UIControl\UserControls\ProgressUICtrl\ProgressUIControl.xaml.cs">
+      <DependentUpon>ProgressUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\PullToRefreshUICtrl\PullToRefreshScrollViewer.cs" />
+    <Compile Include="UIControl\UserControls\RankListUICtrl\RankListBox.cs" />
+    <Compile Include="UIControl\UserControls\RankListUICtrl\RankListUIControl.xaml.cs">
+      <DependentUpon>RankListUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\RetryUICtrl\RetryBox.cs" />
+    <Compile Include="UIControl\UserControls\RetryUICtrl\RetryUIControl.xaml.cs">
+      <DependentUpon>RetryUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\SemanticZoomFlipViewUICtrl\SemanticZoomFlipView.cs" />
+    <Compile Include="UIControl\UserControls\SemanticZoomGridUICtrl\SemanticZoomGrid.cs" />
+    <Compile Include="UIControl\UserControls\SemanticZoomMediaPlayerUICtrl\SematicZoomMediaPlayer.cs" />
+    <Compile Include="UIControl\UserControls\TopTapGuestureUICtrl\TopTapGuestureBox.cs" />
+    <Compile Include="UIControl\UserControls\TopTapGuestureUICtrl\TopTapGuestureUIControl.xaml.cs">
+      <DependentUpon>TopTapGuestureUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\VideoSolutionUICtrl\VideoSolutionBox.cs" />
+    <Compile Include="UIControl\UserControls\VideoSolutionUICtrl\VideoSolutionUIControl.xaml.cs">
+      <DependentUpon>VideoSolutionUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\VolumeUICtrl\VolumeBox.cs" />
+    <Compile Include="UIControl\UserControls\VolumeUICtrl\VolumeUIControl.xaml.cs">
+      <DependentUpon>VolumeUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\WelcomeUICtrl\WelcomeBox.cs" />
+    <Compile Include="UIControl\UserControls\WelcomeUICtrl\WelcomeUIControl.xaml.cs">
+      <DependentUpon>WelcomeUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\WinToastUICtrl\WinToastBox.cs" />
+    <Compile Include="UIControl\UserControls\WinToastUICtrl\WinToastUIControl.xaml.cs">
+      <DependentUpon>WinToastUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\UserControls\WPToastUICtrl\WPToastBox.cs" />
+    <Compile Include="UIControl\UserControls\WPToastUICtrl\WPToastUIControl.xaml.cs">
+      <DependentUpon>WPToastUIControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModelAttribute\Author\AuthorDetailViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Author\AuthorViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Collection\CollectionViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Daily\DailyViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Download\DownloadViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Gift\GiftViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\NavigationRootViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Past\PastDetailViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Past\PastViewModelAttribute.cs" />
+    <Compile Include="ViewModelAttribute\Rank\RankViewModelAttribute.cs" />
+    <Compile Include="ViewModelExecuteCommand\AppBarButtonCommonExcuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Author\AuthorDetailViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Author\AuthorViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Collection\CollectionViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Daily\DailyViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Download\DownloadViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Past\PastCategoryViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Past\PastDetailViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Rank\RankViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\Setting\SettingViewModelExecuteCommand.cs" />
+    <Compile Include="ViewModelExecuteCommand\VideoControlExecuteCommand.cs" />
+    <Compile Include="ViewModel\Author\AuthorDetailViewModel.cs" />
+    <Compile Include="ViewModel\Author\AuthorViewModel.cs" />
+    <Compile Include="ViewModel\Collection\CollectionViewModel.cs" />
+    <Compile Include="ViewModel\Daily\DailyViewModel.cs" />
+    <Compile Include="ViewModel\Download\DownloadViewModel.cs" />
+    <Compile Include="ViewModel\Gift\GiftViewModel.cs" />
+    <Compile Include="ViewModel\NavigationRootViewModel.cs" />
+    <Compile Include="ViewModel\Past\PastDetailViewModel.cs" />
+    <Compile Include="ViewModel\Past\PastViewModel.cs" />
+    <Compile Include="ViewModel\Rank\RankViewModel.cs" />
+    <Compile Include="View\About\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Author\AuthorDetailPage.xaml.cs">
+      <DependentUpon>AuthorDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Author\AuthorPage.xaml.cs">
+      <DependentUpon>AuthorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Collection\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daily\Campaign\CampaignWebPage.xaml.cs">
+      <DependentUpon>CampaignWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daily\DailyPage.xaml.cs">
+      <DependentUpon>DailyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Donate\DonatePage.xaml.cs">
+      <DependentUpon>DonatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Download\DownloadPage.xaml.cs">
+      <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gift\GiftPage.xaml.cs">
+      <DependentUpon>GiftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NavigationRootPage.xaml.cs">
+      <DependentUpon>NavigationRootPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Past\PastDetailPage.xaml.cs">
+      <DependentUpon>PastDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Past\PastPage.xaml.cs">
+      <DependentUpon>PastPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Rank\RankPage.xaml.cs">
+      <DependentUpon>RankPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="EyeSight_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.PlayerFramework.Xaml.UWP, Version=3.0.0.4">
+      <Name>Microsoft Player Framework</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.25.3">
+      <Name>SQLite for Universal Windows Platform %28SQLite.UWP.2015, Version=3.25.3%29</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BlankPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\CommonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\DataTemplateStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Author\AuthorDetailHeaderUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Author\AuthorUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\CategoryUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Collection\FavoriteCommonUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Collection\FavoriteListUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Daily\DailyCommonUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Daily\DailyMobileTodayUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Daily\DailyMobileUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Download\DownloadCommonUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Download\DownloadListUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Gift\GiftUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Past\CategoryDetailCommonUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Past\CategoryDetailListUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\Past\PastCategoryUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\DataTemplates\VideoTagUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\AnimatedImageUICtrl\AnimatedImageUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\CopyUICtrl\CopyUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\FlipAnimationImageUICtrl\FlipAnimationImageUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\LeftSliderGuestureUICtrl\LeftSliderGuestureUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\ProgressUICtrl\ProgressUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\RankListUICtrl\RankListUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\RetryUICtrl\RetryUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\TopTapGuestureUICtrl\TopTapGuestureUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\VideoSolutionUICtrl\VideoSolutionUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\VolumeUICtrl\VolumeUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\WelcomeUICtrl\WelcomeUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\WinToastUICtrl\WinToastUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\UserControls\WPToastUICtrl\WPToastUIControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\About\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Author\AuthorDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Author\AuthorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Collection\CollectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Daily\Campaign\CampaignWebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Daily\DailyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Donate\DonatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Download\DownloadPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Gift\GiftPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\NavigationRootPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Past\PastDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Past\PastPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Rank\RankPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Setting\SettingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

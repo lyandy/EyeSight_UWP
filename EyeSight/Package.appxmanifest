@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="36539MicLEO.291680B5EB477" Publisher="CN=07E3E17D-097F-4AF5-9BCB-B53645986192" Version="1.5.8.0" />
+  <mp:PhoneIdentity PhoneProductId="960fa19c-87d3-455e-86e5-3f5115a6b2e1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>视野</DisplayName>
+    <PublisherDisplayName>MicroLeo</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="EyeSight.App">
+      <uap:VisualElements DisplayName="视野" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="EyeSight" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="视野" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#010101" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,33 @@
+﻿<MyControl:UIControlBase
+    xmlns:MyControl="using:EyeSight.Base"
+    xmlns:Extensions="using:EyeSight.Extension.DependencyObjectEx"
+    x:Class="EyeSight.UIControl.DataTemplates.CategoryDetailListUIControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.UIControl.DataTemplates"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="grid" DataContextChanged="grid_DataContextChanged" Opacity="0">
+        <Image Width="{Binding Path=Width,ElementName=grid}" Stretch="Fill" Height="{Binding Path=Height,ElementName=grid}" Source="{Binding Path=convertCoverForDetail.AsyncValue}" Extensions:ImageEx.FadeInOnLoaded="True"/>
+        <Grid x:Name="coverGrid" Background="#55000000">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Path=title}" FontSize="15" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,5,0,0" FontSize="12">
+                    <Run Text="#"/>
+                    <Run Text="{Binding Path=category}"/>
+                    <Run Text="{Binding Path=videoDurtion}"/>
+                    <Run Text="{Binding Path=downloadPerformanceListProgress}"/>
+                </TextBlock>
+            </Grid>
+            <TextBlock Text="{Binding Path=convertVideoType}" Foreground="White" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"/>
+        </Grid>
+    </Grid>
+</MyControl:UIControlBase>

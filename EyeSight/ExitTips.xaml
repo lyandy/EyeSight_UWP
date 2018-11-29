@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ifeng.Ctrls.ExitTips"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="sb">
+            <DoubleAnimation Storyboard.TargetName="grid"
+                             Storyboard.TargetProperty="Opacity"
+                             From="1" To="0"
+                             Duration="0:0:0.1">
+            </DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid Name="grid" Opacity="1" Background="Transparent">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="260" Height="50">
+            <Rectangle x:Name="rect" Opacity="0.5" RadiusX="5" RadiusY="5"/>
+            <TextBlock Text="再按一次退出程序" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop x:Name="gs1" Offset="0" />
+                        <GradientStop x:Name="gs2" Color="White" Offset="0" />
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

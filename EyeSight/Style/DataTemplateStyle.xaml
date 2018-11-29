@@ -1,0 +1,97 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Template="using:EyeSight.UIControl.DataTemplates"
+    xmlns:Selector="using:EyeSight.Selector"
+    xmlns:local="using:EyeSight">
+
+    <!--视野类别分类模板-->
+    <DataTemplate x:Key="CategoryDataTemplate">
+        <Template:CategoryUIControl/>
+    </DataTemplate>
+
+    <!--每日精选平板模式模板-->
+    <DataTemplate x:Key="DailyCommonDataTemplate">
+        <Template:DailyCommonUIControl/>
+    </DataTemplate>
+
+    <!--每日精选手机模式模板-->
+    <DataTemplate x:Key="DailyMobileDataTemplate">
+        <Template:DailyMobileUIControl/>
+    </DataTemplate>
+
+    <!--每日精选手机模式日期模板-->
+    <DataTemplate x:Key="DailyMobileTodayDataTemplate">
+        <Template:DailyMobileTodayUIControl/>
+    </DataTemplate>
+
+    <!--往期分类-总分类模板-->
+    <DataTemplate x:Key="PastCategoryDataTemplate">
+        <Template:PastCategoryUIControl/>
+    </DataTemplate>
+
+    <!--往期分类、排行榜ListView模式模板-->
+    <DataTemplate x:Key="CategoryDetailListDataTemplate">
+        <Template:CategoryDetailListUIControl/>
+    </DataTemplate>
+
+    <!--往期分类、排行榜FlipView模式模板-->
+    <DataTemplate x:Key="CategoryDetailCommonDataTemplate">
+        <Template:CategoryDetailCommonUIControl/>
+    </DataTemplate>
+
+    <!--我的收藏ListView模式模板-->
+    <DataTemplate x:Key="FavoriteListDataTemplate">
+        <Template:FavoriteListUIControl/>
+    </DataTemplate>
+
+    <!--我的收藏FlipView模式模板-->
+    <DataTemplate x:Key="FavoriteCommonDataTemplate">
+        <Template:FavoriteCommonUIControl/>
+    </DataTemplate>
+
+    <!--我的下载ListView模式模板-->
+    <DataTemplate x:Key="DownloadListDataTemplate">
+        <Template:DownloadListUIControl/>
+    </DataTemplate>
+
+    <!--我的下载FlipView模式模板-->
+    <DataTemplate x:Key="DownloadCommonDataTemplate">
+        <Template:DownloadCommonUIControl/>
+    </DataTemplate>
+
+    <!--视频标签展示模板-->
+    <DataTemplate x:Key="VideoTagDataTemplate">
+        <Template:VideoTagUIControl/>
+    </DataTemplate>
+    
+    <!--应用推荐展示模板-->
+    <DataTemplate x:Key="GiftDataTemplate">
+        <Template:GiftUIControl/>
+    </DataTemplate>
+
+    <!--优质作者展示模板-->
+    <DataTemplate x:Key="AuthorDataTemplate">
+        <Template:AuthorUIControl/>
+    </DataTemplate>
+    
+    <!--优质作者详细 ListView Header 展示模板-->
+    <DataTemplate x:Key="AuthorDetailHeaderDataTemplate">
+        <Template:AuthorDetailHeaderUIControl/>
+    </DataTemplate>
+
+    <!--作者详细-手机端-ListView顶部作者展示样式模板。注意：手机端有，电脑端无-->
+    <DataTemplate x:Key="AuthorDetailListViewHeaderDataTemplate">
+        <Selector:AuthorDetailListViewHeaderDataTemplateSelector Content="{Binding}">
+            <Selector:AuthorDetailListViewHeaderDataTemplateSelector.AuthorDetailHeaderNormalDataTemplate>
+                <DataTemplate>
+                    <Template:AuthorDetailHeaderUIControl/>
+                </DataTemplate>
+            </Selector:AuthorDetailListViewHeaderDataTemplateSelector.AuthorDetailHeaderNormalDataTemplate>
+            <Selector:AuthorDetailListViewHeaderDataTemplateSelector.AuthorDetailHeaderNullDataTemplate>
+                <DataTemplate/>
+            </Selector:AuthorDetailListViewHeaderDataTemplateSelector.AuthorDetailHeaderNullDataTemplate>
+        </Selector:AuthorDetailListViewHeaderDataTemplateSelector>
+    </DataTemplate>
+
+</ResourceDictionary>

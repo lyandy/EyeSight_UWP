@@ -1,0 +1,110 @@
+﻿<MyControl:UIControlBase
+    xmlns:MyControl="using:EyeSight.Base"
+    xmlns:UIFlipAnimationImageControl="using:EyeSight.UIControl.UserControls.FlipAnimationImageUICtrl"
+    x:Class="EyeSight.UIControl.DataTemplates.DownloadCommonUIControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.UIControl.DataTemplates"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="grid">
+        <!--<Grid x:Name="imageGrid" VerticalAlignment="Top">
+            <Image Source="{Binding Path=convertCoverForDetail.AsyncValue}" Stretch="UniformToFill" Extensions:ImageEx.FadeInOnLoaded="True" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Grid x:Name="coverGrid" Background="#33000000" Opacity="0"/>
+            <Grid Name="backgroundGrid" Width="60" Height="60" Visibility="Visible">
+                <Ellipse Width="60" Height="60" Fill="#33FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Ellipse Width="60" Height="60" VerticalAlignment="Center" HorizontalAlignment="Center" StrokeThickness="1.5" Stroke="White"/>
+                <Path Data="M2.61111,3.27778 L2.5,156.278 L155.667,79.2083 z M0.858963,0.5 L159.5,79.1672 L0.5,159.5 z" Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="15" Stretch="Fill" Stroke="White" UseLayoutRounding="False" Width="15" Margin="5,0,0,0"/>
+            </Grid>
+            <Grid x:Name="coverPerformGrid" Background="Transparent"/>
+        </Grid>-->
+        <Grid x:Name="imageGrid" VerticalAlignment="Top">
+            <Grid.Clip>
+                <RectangleGeometry x:Name="clipRect"/>
+            </Grid.Clip>
+            <UIFlipAnimationImageControl:FlipAnimationImageUIControl/>
+            <Grid x:Name="coverGrid" Background="#33000000" Opacity="0"/>
+            <Grid Name="backgroundGrid" Width="60" Height="60" Visibility="Visible">
+                <Ellipse Width="60" Height="60" Fill="#33000000" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Ellipse Width="60" Height="60" VerticalAlignment="Center" HorizontalAlignment="Center" StrokeThickness="1.5" Stroke="White"/>
+                <Path Data="M2.61111,3.27778 L2.5,156.278 L155.667,79.2083 z M0.858963,0.5 L159.5,79.1672 L0.5,159.5 z" Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="15" Stretch="Fill" Stroke="White" UseLayoutRounding="False" Width="15" Margin="5,0,0,0"/>
+            </Grid>
+            <Grid x:Name="coverPerformGrid" Background="Transparent"/>
+        </Grid>
+        <Grid x:Name="descGrid" VerticalAlignment="Bottom" Loaded="descGrid_Loaded">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="{Binding Path=convertCoverBlurred.AsyncValue}"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="13"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="95"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.RowSpan="5" Background="#66000000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <TextBlock Text="{Binding Path=title}" FontSize="19" VerticalAlignment="Center" Margin="15,10,15,0" Foreground="White"/>
+            <Grid Background="White" Height="1" Grid.Row="1" Margin="15,0,15,0"/>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <TextBlock FontSize="13" Margin="15,0,8,0" Foreground="White">
+                    <Run Text="时长 : "/>
+                    <Run Text="{Binding Path=videoDurationForCommon}"/>
+                </TextBlock>
+                <GridView 
+                    ItemsSource="{Binding Path=convertTags}"
+                    Height="28"
+                    Margin="0,2,0,0"
+                    x:Name="videoTagGridView"
+                    VerticalAlignment="Top"
+                    SelectionMode="None"
+                    IsSwipeEnabled="false"
+                    ItemContainerStyle="{StaticResource GridViewVideoTagStyle}"
+                    ItemTemplate="{StaticResource VideoTagDataTemplate}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    ScrollViewer.VerticalScrollMode="Disabled"
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!--使用toolkit:WrapPanel是要求GridView的Item模板发小可以不同，注意用了toolkit:Panel就不能使用微软的ISupportIncrementalLoading接口了，会使此接口失效-->
+                            <toolkit:WrapPanel Orientation="Horizontal">
+                                <toolkit:WrapPanel.ChildrenTransitions>
+                                    <!--此处主要是去除GridView自带的动画，同时也防止GridView出现时第一项item动画异常问题-->
+                                    <TransitionCollection/>
+                                </toolkit:WrapPanel.ChildrenTransitions>
+                            </toolkit:WrapPanel>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+            </StackPanel>
+            <TextBlock FontSize="13" LineHeight="8" Grid.Row="3" Foreground="White" Text="{Binding Path=description}" Margin="15,2,15,0" TextWrapping="Wrap"/>
+            <StackPanel x:Name="bottomSP" Grid.Row="4" Orientation="Horizontal" Margin="7,-5,0,0" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="35" Height="35" Source="ms-appx:///Assets/Favorites.png" />
+                    <TextBlock FontSize="13" Foreground="White" Text="{Binding Path=consumption.collectionCount}" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Image Width="35" Height="35" Source="ms-appx:///Assets/Share.png" />
+                    <TextBlock FontSize="13" Foreground="White" Text="{Binding Path=consumption.shareCount}" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+
+            <AppBarButton x:Name="appBarCopy" Command="{Binding ExeCommandAppBarButtonCommonVM.AppBarButtonCopyCommand, Source={StaticResource Locator}}" CommandParameter="{Binding}" Icon="Copy" Label="复制链接" Grid.Row="4" Margin="0,0,111,0" HorizontalAlignment="Right" Style="{StaticResource FavoriteAppBarButtonStyle}">
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="0.7" ScaleY="0.7" />
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
+
+            <AppBarButton x:Name="appBarFavorite" Command="{Binding ExeCommandAppBarButtonCommonVM.AppBarButtonFavoriteCommand, Source={StaticResource Locator}}" CommandParameter="{Binding}" Icon="{Binding Path=isFavorite, Converter={StaticResource boolToAppBarButtonIconForFavoriteConverter}}" Label="{Binding Path=
+                isFavorite, Converter={StaticResource boolToLabelForFavoriteConverter}}" Grid.Row="4" Margin="0,0,5,0" HorizontalAlignment="Right" Style="{StaticResource FavoriteAppBarButtonStyle}">
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="0.7" ScaleY="0.7" />
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
+        </Grid>
+    </Grid>
+</MyControl:UIControlBase>

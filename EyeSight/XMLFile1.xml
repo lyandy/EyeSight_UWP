@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tile version='3'>
+  <visual>
+    <binding template='TileMedium' branding='name'>
+      <text hint-wrap='true'>M-S 快闪：一起来唱圣诞歌~</text>
+    </binding>
+    <binding template='TileWide' branding='name'>
+      <text hint-wrap='true'>M-S 快闪：一起来唱圣诞歌~</text>
+      <text hint-style='captionsubtle' hint-wrap='true'>超市里逛着逛着，身边的人就聚在一起唱起了圣诞歌会是什么感觉？M&S 玛莎百货在纽卡斯尔 Taste of Christmas Event  的现场就来了这样一次快闪。有些歌单独听没什么感受，人多一起唱就莫名感人了。From M&S</text>
+    </binding>
+    <binding template='TileLarge' branding='name'>
+      <text hint-wrap='true'>M&S 快闪：一起来唱圣诞歌~</text>
+      <text hint-style='captionsubtle' hint-wrap='true'>超市里逛着逛着，身边的人就聚在一起唱起了圣诞歌会是什么感觉？M&S 玛莎百货在纽卡斯尔 Taste of Christmas Event  的现场就来了这样一次快闪。有些歌单独听没什么感受，人多一起唱就莫名感人了。From M&S</text>
+    </binding>
+  </visual>
+</tile>

@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="EyeSight.View.Setting.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Setting"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid x:Name="AnimationGrid">
+            <Grid x:Name="contentGrid" HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="autoPlayGrid" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="打开视频自动播放" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="autoPlayToggle" Grid.Column="1" Tag="autoPlayToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="autoBackGrid" Grid.Row="1" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="autoBackLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <TextBlock Text="视频播放完毕自动返回" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="autoBackToggle" Grid.Column="1" Tag="autoBackToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="hightQualityGrid" Grid.Row="2" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="hightQualityLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0" />
+                    <TextBlock Text="WiFi或宽带自动选择高清播放" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="hightQualityToggle" Grid.Column="1" Tag="hightQualityToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="downloadGrid" Grid.Row="3" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="downloadLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <TextBlock Text="视频下载自动选择高清资源" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="downloadToggle" Grid.Column="1" Tag="downloadToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="downloadWhenFavoriteGrid" Grid.Row="4" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="downloadWhenFavoriteLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <TextBlock Text="收藏视频时自动下载" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="downloadWhenFavoriteToggle" Grid.Column="1" Tag="downloadWhenFavoriteToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="tileGrid" Grid.Row="5" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="tileLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <TextBlock Text="显示动态磁贴" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="tileToggle" Grid.Column="1" Tag="tileToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="sureGrid" Grid.Row="6" Margin="13,0,7,0" Visibility="Collapsed" Height="55" Opacity="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="sureLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <TextBlock Text="退出应用前确认" Foreground="Black" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="14.5"/>
+                    <ToggleSwitch x:Name="sureToggle" Grid.Column="1" Tag="sureToggle" OffContent="关" OnContent="开" FontFamily="Microsoft YaHei" Foreground="Black" Width="75" HorizontalAlignment="Right" RequestedTheme="Light" Style="{StaticResource ToggleSwitchSettingStyle}"/>
+                </Grid>
+                <Grid x:Name="clearCacheGrid" Grid.Row="7" Margin="13,0,7,0" Height="55" Opacity="0">
+                    <Grid x:Name="clearCacheLineGrid" Height="0.5" Background="#88808080" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="190" HorizontalAlignment="Left" Opacity="0"/>
+                    <Button x:Name="btnClearCache" Style="{StaticResource TextButtonStyle}"  FontSize="14.5" FontWeight="SemiLight" FontFamily="Microsoft YaHei" Command="{Binding ExeCommandSettingVM.SettingBtnClickCommand,Source={StaticResource Locator}}" CommandParameter="{Binding ElementName=btnClearCache}">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock x:Name="tbClear" Text="清理缓存" Foreground="Black"/>
+                                    <TextBlock Text="不会清理收藏和下载" Foreground="gray" FontSize="12"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

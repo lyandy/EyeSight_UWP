@@ -1,0 +1,36 @@
+﻿<Application
+    x:Class="EyeSight.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight"
+    xmlns:vm="using:EyeSight.Locator"
+    xmlns:LocalConverter="using:EyeSight.Converter"
+    RequestedTheme="Dark">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Name="VMLocator" x:Key="Locator"/>
+            <LocalConverter:BoolToARGBConverter x:Key="boolToARGBConverter"/>
+            <LocalConverter:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+            <LocalConverter:BoolToAppBarButtonIconConverter x:Key="boolToAppBarButtonIconConverter"/>
+            <LocalConverter:ModelToMediaUrlConverter x:Key="modelToMediaUrlConverter"/>
+            <LocalConverter:VolumeToMuteConverter x:Key="volumeToMuteConverter"/>
+            <LocalConverter:VideoSolutionToLabelConverter x:Key="videoSolutionToLabelConverter"/>
+            <LocalConverter:VideoSolutionToEnabledConverter x:Key="videoSolutionToEnabledConverter"/>
+            <LocalConverter:BoolToAppBarButtonIconForFavoriteConverter x:Key="boolToAppBarButtonIconForFavoriteConverter"/>
+            <LocalConverter:BoolToAppBarButtonIconForDownloadConverter x:Key="boolToAppBarButtonIconForDownloadConverter"/>
+            <LocalConverter:BoolToLabelForFavoriteConverter x:Key="boolToLabelForFavoriteConverter"/>
+            <LocalConverter:BoolToContrastBooleanConverter x:Key="boolToContrastBooleanConverter"/>
+            <LocalConverter:DataContextToVideoTitleConverter x:Key="dataContextToVideoTitleConverter"/>
+            <LocalConverter:BoolToBrushConverter x:Key="boolToBrushConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/CommonStyle.xaml"/>
+                <ResourceDictionary Source="/Style/DataTemplateStyle.xaml" />
+                <!--Microsoft.PlayerFramework 视频播放样式-->
+                <!--<ResourceDictionary Source="ms-appx:///Microsoft.PlayerFramework/themes/Entertainment.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

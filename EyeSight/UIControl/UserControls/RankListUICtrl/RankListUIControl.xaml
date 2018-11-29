@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="EyeSight.UIControl.UserControls.RankListUICtrl.RankListUIControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.UIControl.UserControls.RankListUICtrl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="grid" Width="100" Height="132" Opacity="0" Background="#FFDCDCDC">
+        <ListView x:Name="rankListView" Background="Transparent" SelectionChanged="rankListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="30" Width="100" Tapped="Grid_Tapped" Background="Transparent">
+                        <TextBlock Text="{Binding Path=RankName}"  Margin="15,0,0,0" VerticalAlignment="Center" Foreground="Black"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid>
+                        <WrapGrid.ChildrenTransitions>
+                            <TransitionCollection/>
+                        </WrapGrid.ChildrenTransitions>
+                    </WrapGrid>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="EyeSight.View.Past.PastPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Past"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:LocalCmdEx="using:EyeSight.Extension.CommandEx"
+    xmlns:toolkit="using:WinRTXamlToolkit.Controls"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid x:Name="AnimationGrid">
+            <ListView x:Name="szListView" SelectionMode="None" ItemsSource="{Binding Path=CategorySubCollection}" Margin="0,0,-2,0" Padding="0,0,-2,-2" ItemTemplate="{StaticResource PastCategoryDataTemplate}" ItemContainerStyle="{StaticResource PhonePastCategoryListViewItemStyle}" RequestedTheme="Light" LocalCmdEx:ListViewCommandEx.LoadMoreCommand="{Binding ExeCommandPastCategoryVM.ListViewLoadMoreMockCommand, Source={StaticResource Locator}}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel Orientation="Horizontal">
+                            <toolkit:WrapPanel.ChildrenTransitions>
+                                <!--此处主要是去除GridView自带的动画，同时也防止GridView出现时第一项item动画异常问题-->
+                                <TransitionCollection/>
+                            </toolkit:WrapPanel.ChildrenTransitions>
+                        </toolkit:WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

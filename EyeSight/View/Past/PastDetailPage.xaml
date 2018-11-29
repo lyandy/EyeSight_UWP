@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="EyeSight.View.Past.PastDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EyeSight.View.Past"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:LocalCmdEx="using:EyeSight.Extension.CommandEx"
+    xmlns:UIGridControl="using:EyeSight.UIControl.UserControls.SemanticZoomGridUICtrl"
+    xmlns:UIFlipViewControl="using:EyeSight.UIControl.UserControls.SemanticZoomFlipViewUICtrl"
+    xmlns:myppf="using:EyeSight.UIControl.UserControls.SemanticZoomMediaPlayerUICtrl"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid x:Name="AnimationGrid">
+            <SemanticZoom x:Name="szListPC">
+                <SemanticZoom.ZoomedInView>
+                    <ListView x:Name="szListView" LocalCmdEx:ListViewCommandEx.LoadMoreCommand="{Binding ExeCommandPastDetailVM.ListViewLoadMoreCommand, Source={StaticResource Locator}}" ItemsSource="{Binding Path=CategoryDetailCollection}" SelectionMode="None" ItemTemplate="{StaticResource CategoryDetailListDataTemplate}" RequestedTheme="Light" >
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </SemanticZoom.ZoomedInView>
+                <SemanticZoom.ZoomedOutView>
+                    <UIGridControl:SemanticZoomGrid>
+                        <SemanticZoom x:Name="szPC" IsZoomedInViewActive="True" Margin="0,0,0,0">
+                            <SemanticZoom.ZoomedInView>
+                                <UIFlipViewControl:SemanticZoomFlipView x:Name="szCategoryDetailFlipView" ItemsSource="{Binding Path=CategoryDetailCollection}" ItemTemplate="{StaticResource CategoryDetailCommonDataTemplate}" SelectedItem="{Binding BaseVM.curModelPropertyBase,Mode=TwoWay, Source={StaticResource Locator}}"/>
+                            </SemanticZoom.ZoomedInView>
+                            <SemanticZoom.ZoomedOutView>
+                                <myppf:SematicZoomMediaPlayer
+                                    PlayerStateChanged="VideoMediaPlayer_PlayerStateChanged"
+                                              x:Name="videoMediaPlayer"
+                                              IsPlayPauseVisible="True"
+                                              IsFullScreenVisible="True" 
+                                              IsDurationVisible="True"
+                                              IsTimeElapsedVisible="True"
+                                              IsTimeRemainingVisible="False"
+                                              IsResolutionIndicatorVisible="True"
+                                              IsVolumeVisible="True"
+                                    RequestedTheme="Light"
+                                              FontSize="12"
+                                              RenderTransformOrigin="0.5, 0.5"/>
+                            </SemanticZoom.ZoomedOutView>
+                        </SemanticZoom>
+                    </UIGridControl:SemanticZoomGrid>
+                </SemanticZoom.ZoomedOutView>
+            </SemanticZoom>
+        </Grid>
+    </Grid>
+</Page>

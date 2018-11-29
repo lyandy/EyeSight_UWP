@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSight", "EyeSight\EyeSight.csproj", "{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|ARM.Build.0 = Debug|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|ARM.Deploy.0 = Debug|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x64.ActiveCfg = Debug|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x64.Build.0 = Debug|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x64.Deploy.0 = Debug|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x86.ActiveCfg = Debug|x86
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x86.Build.0 = Debug|x86
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Debug|x86.Deploy.0 = Debug|x86
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|ARM.ActiveCfg = Release|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|ARM.Build.0 = Release|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|ARM.Deploy.0 = Release|ARM
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x64.ActiveCfg = Release|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x64.Build.0 = Release|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x64.Deploy.0 = Release|x64
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x86.ActiveCfg = Release|x86
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x86.Build.0 = Release|x86
+		{CA8A17B6-31F5-4AC0-A278-F35C1610CA51}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
